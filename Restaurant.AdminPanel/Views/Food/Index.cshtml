@@ -1,0 +1,35 @@
+﻿@model List<FoodViewModel>
+<div class="col-lg-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Foods</h4>
+            <a class="btn btn-primary" asp-action="create">Create</a>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Name</td>
+                                <td>@item.Description</td>
+                                <td>@item.Price</td>
+                                <td>
+                                    <a class="btn btn-warning" asp-action="update" asp-route-id="@item.Id">Update</a>
+                                    <a class="btn btn-danger" asp-action="delete" asp-route-id="@item.Id">Delete</a>
+                                </td>
+                            </tr>
+                        }           
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

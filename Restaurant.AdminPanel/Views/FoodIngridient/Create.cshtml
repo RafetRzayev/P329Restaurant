@@ -1,0 +1,22 @@
+﻿@model FoodIngridientCreateViewModel;
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Create food and ingrident relations</h4>
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <label for="name">Food</label>
+                    <select asp-for="FoodId" asp-items="@Model.Foods" class="form-control" placeholder="Food"></select>
+                    <span asp-validation-for="FoodId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="description">Ingridient</label>
+                    <select asp-for="IngridientIds" asp-items="@Model.Ingridients" class="form-control"></select>
+                    <span asp-validation-for="IngridientIds" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Create</button>
+                <a asp-action="index" asp-asp-controller="food" class="btn btn-light">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
